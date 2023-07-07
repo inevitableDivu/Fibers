@@ -68,6 +68,8 @@ export function getGeneralApiProblem(response: ApiResponse<any>): GeneralApiProb
       }
     case "CANCEL_ERROR":
       return null
+    default:
+      break
   }
 
   return null

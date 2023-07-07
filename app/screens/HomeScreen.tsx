@@ -8,18 +8,16 @@ import { Screen, Text } from "app/components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "app/models"
 
-interface RegisterScreenProps extends NativeStackScreenProps<AppStackScreenProps<"Register">> {}
+interface HomeScreenProps extends NativeStackScreenProps<AppStackScreenProps<"Home">> {}
 
-export const RegisterScreen: FC<RegisterScreenProps> = observer(function RegisterScreen() {
+export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen() {
   // Pull in one of our MST stores
   // const { someStore, anotherStore } = useStores()
 
   // Pull in navigation via hook
   // const navigation = useNavigation()
   return (
-    <Screen style={$root} preset="scroll">
-      <Text></Text>
-    </Screen>
+    <></>
   )
 })
 

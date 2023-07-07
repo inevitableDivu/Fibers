@@ -1,9 +1,3 @@
----
-patch:
-  path: "app/components/index.ts"
-  append: "export * from \"./<%= props.subdirectory %><%= props.pascalCaseName %>\"\n"
-  skip: <%= props.skipIndexFile %>
----
 
 import * as React from "react"
 import { StyleProp, TextStyle, View, ViewStyle } from "react-native"
@@ -11,7 +5,7 @@ import { observer } from "mobx-react-lite"
 import { colors, typography } from "app/theme"
 import { Text } from "app/components/Text"
 
-export interface <%= props.pascalCaseName %>Props {
+export interface InputProps {
   /**
    * An optional style override useful for padding & margin.
    */
@@ -21,7 +15,7 @@ export interface <%= props.pascalCaseName %>Props {
 /**
  * Describe your component here
  */
-export const <%= props.pascalCaseName %> = observer(function <%= props.pascalCaseName %>(props: <%= props.pascalCaseName %>Props) {
+export const Input = observer(function Input(props: InputProps) {
   const { style } = props
   const $styles = [$container, style]
 
