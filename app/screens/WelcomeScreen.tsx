@@ -1,9 +1,9 @@
+import { NavigationProp, useNavigation } from "@react-navigation/native"
+import { AppStackParamList, AppStackScreenProps, useBackButtonHandler } from "app/navigators"
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
-import {
-  Text,
-} from "../components"
+import { Button, Text } from "../components"
 import { isRTL } from "../i18n"
 import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
@@ -13,10 +13,9 @@ const welcomeFace = require("../../assets/images/welcome-face.png")
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(
-) {
-
+export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(props) {
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
+  // useBackButtonHandler((route) => false)
 
   return (
     <View style={$container}>
@@ -35,6 +34,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
       <View style={[$bottomContainer, $bottomContainerInsets]}>
         <Text tx="welcomeScreen.postscript" size="md" />
       </View>
+      <Button onPress={() => props.navigation.navigate("Login")}>Welcome</Button>
     </View>
   )
 })
